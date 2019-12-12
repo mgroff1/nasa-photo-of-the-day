@@ -4,6 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Arrow from "./components/C1";
 
 import "./App.css";
+const keys=[];
+window.addEventListener('keydown',function (e) {
+    keys[e.code] = false;
+
+});
 
 const App = () => {
 	const [pic, setPic] = useState("");
@@ -21,17 +26,16 @@ const App = () => {
 			})
 			.catch(err => console.log(err));
 	}, [pic, date]);
-
-	const checkKey = e => {
+window.addEventListener('keyup',function (e) {
+          keys[e.code] = true;
 		e = e || window.event;
 		if (e.keyCode === 37) {
 			setDate(date - 1);
 		} else if (e.keyCode === 39) {
 			setDate(date + 1);
 		}
-	};
+	});
 
-	document.onkeydown = checkKey;
 
 	return (
 		<div className="App">
