@@ -1,14 +1,23 @@
 import React from "react";
 
-const Arrow = ({ arrow, setDate, date, currentDate }) => {
+const Arrow = ({ leftArrow, rightArrow, setDate, date, currentDate }) => {
 	return (
+    <span
+      className="left-arrow"
+      role="img"
+
+      onClick={() => setDate(date - 1)}
+    >
+      {date === currentDate ? null : leftArrow}
+
+    </span>,
 		<span
-			className="arrow"
+			className="right-arrow"
 			role="img"
-			aria-label="point-right"
-			onClick={() => setDate(date - 1)}
+
+			onClick={() => setDate(date + 1)}
 		>
-			{date === currentDate ? null : arrow}
+			{date === currentDate ? null : rightArrow}
 
 		</span>
 	);

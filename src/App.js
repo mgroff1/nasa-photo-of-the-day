@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Arrow from "./components/C1";
 
 import "./App.css";
@@ -14,7 +14,7 @@ const App = () => {
 	useEffect(() => {
 		axios
 			.get(
-				"https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&"+date
+				`https://api.nasa.gov/planetary/apod?api_key=H4RkKMTzLDohZOqogAHog9Hiq7laUaxIAH3oXc1D&date=2019-10-`+date
 			)
 			.then(res => {
 				setPic(res.data.url);
@@ -35,10 +35,10 @@ const App = () => {
 
 	return (
 		<div className="App">
-			<div className="img-container">
+			<div className="left-arrow">
 				{pic === "" ? null : (
 					<Arrow
-						arrow="◄"
+						leftArrow="◄"
 						setDate={() => setDate(date - 1)}
 						date={date}
 						currentDate={currentDate}
@@ -50,7 +50,8 @@ const App = () => {
 
 				{pic === "" ? null : (
 					<Arrow
-						arrow='►'
+            className='right-arrow'
+						rightArrow='►'
 						date={date}
 						currentDate={currentDate}
 						setDate={() => setDate(date + 1)}
