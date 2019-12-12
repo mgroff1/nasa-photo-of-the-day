@@ -5,7 +5,7 @@ import Arrow from "./components/C1";
 
 import "./App.css";
 const keys=[];
-window.addEventListener('keydown',function (e) {
+window.addEventListener('keyup',function (e) {
     keys[e.code] = false;
 
 });
@@ -19,22 +19,23 @@ const App = () => {
 	useEffect(() => {
 		axios
 			.get(
-				`https://api.nasa.gov/planetary/apod?api_key=H4RkKMTzLDohZOqogAHog9Hiq7laUaxIAH3oXc1D&date=2019-10-`+date
+				`https://api.nasa.gov/planetary/apod?api_key=H4RkKMTzLDohZOqogAHog9Hiq7laUaxIAH3oXc1D&date=2019-01-`+date
 			)
 			.then(res => {
 				setPic(res.data.url);
 			})
 			.catch(err => console.log(err));
 	}, [pic, date]);
-window.addEventListener('keyup',function (e) {
-          keys[e.code] = true;
-		e = e || window.event;
+document.onkeydown = function (e) {
+          // keys[e.code] = true;
+		// e = e || window.event;
 		if (e.keyCode === 37) {
 			setDate(date - 1);
 		} else if (e.keyCode === 39) {
 			setDate(date + 1);
 		}
-	});
+
+	};
 
 
 	return (
