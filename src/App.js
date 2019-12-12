@@ -12,7 +12,7 @@ window.addEventListener('keyup',function (e) {
 
 const App = () => {
 	const [pic, setPic] = useState("");
-	const [date, setDate] = useState(27);
+	const [date, setDate] = useState(10);
 
 	const currentDate = new Date().getDate();
 
@@ -50,7 +50,7 @@ document.onkeydown = function (e) {
 					/>
 				)}
 				{pic ? (
-					<img alt="NASA APOD" src={pic} style={{ height: "100vh" }} />
+					<img className="img" alt="NASA APOD" src={pic} style={{ height: "70vh" }} />
 				) : null}
 
 				{pic === "" ? null : (

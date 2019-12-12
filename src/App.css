@@ -1,3 +1,6 @@
+*{
+  overflow: none;
+}
 .App {
   text-align: center;
 }
@@ -30,4 +33,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+img.img{
+  width:70vw;
+  height:70vh;
+  margin-top:25px;
+  border:15px ridge black;
 }
