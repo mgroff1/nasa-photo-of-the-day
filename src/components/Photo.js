@@ -5,18 +5,8 @@ import React, {
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
-import Data from './Data';
-import styled from 'styled-components';
 import {StyledBody, StyledCont, StyledPhoto,StyledText,Hdiv2,Hdiv3,DateWrapper} from './Styles.js'
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button
-} from 'reactstrap';
+
 
 
 function Photo() {
@@ -50,36 +40,18 @@ function Photo() {
     <StyledCont >
     <DateWrapper >
     < DatePicker height = '50px'
-    onChange = {
-      onChange
-    }
-    value = {
-      newDate
-    }
+    onChange = {onChange}
+    value = {newDate}
     format = 'yyyy-MM-dd'
-    maxDate = {
-      new Date()
-    }
-    />
+    maxDate = {new Date()}/>
     </DateWrapper>
-     <StyledBody >
-    <Hdiv2 > {
-      title
-    } < /Hdiv2>
-
-    <
-    Hdiv3 > {
-      date
-    } < /Hdiv3> <
-    StyledPhoto src = {
-      photo
-    }
-    alt = "" / >
-    <StyledText width = '30vw' >{
-      about
-    } < /StyledText> <
-    /StyledBody> <
-    /StyledCont>
+    <StyledBody >
+      <Hdiv2 > {title} < /Hdiv2>
+      <Hdiv3 > {date} < /Hdiv3>
+    <StyledPhoto src = {photo} alt = "" / >
+    <StyledText width = '30vw' >{about} < /StyledText>
+     </StyledBody>
+    </StyledCont>
   )
 
 }

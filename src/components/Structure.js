@@ -41,7 +41,7 @@ function Data(props) {
 
       <p>{props.about}</p>
 
-        <h3>{props.date}</h3>
+        <DataH3>{props.date}</DataH3>
     </DataDiv>
   )
 }
