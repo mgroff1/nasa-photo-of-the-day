@@ -12,8 +12,9 @@ display:flex;
 `;
 
 const DataH2 = styled.h2`
-position:absolute;
-top:20%;
+position:relative;
+top:0%;
+left:10px;
   width: 10vw;
   margin: 10px 0;
   padding: 0;
